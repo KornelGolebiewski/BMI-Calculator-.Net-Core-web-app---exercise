@@ -1,0 +1,50 @@
+﻿@page
+@using PS03
+@namespace PS03.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BMICalculator</title>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <h1>BMI CALCULATOR</h1>
+    <form method="post">
+        <label asp-for="person.firstName"></label>
+        <input asp-for="person.firstName" />
+        <span asp-validation-for="person.firstName" class="text-danger"></span><br /><br />
+        <label asp-for="person.email"></label>
+        <input asp-for="person.email" />
+        <span asp-validation-for="person.email" class="text-danger"></span><br /><br />
+        <label asp-for="person.age"></label>
+        <input asp-for="person.age" />
+        <span asp-validation-for="person.age" class="text-danger"></span><br /><br />
+        <label asp-for="person.unit"></label><br /><br />
+        <select asp-for="person.unit">
+            <option value="">--Please choose an option--</option>
+            <option value="cm">Centimeters</option>
+            <option value="m">Meters</option>
+        </select><br /><br />
+        <label asp-for="person.height"></label>
+        <input asp-for="person.height" />
+        <span asp-validation-for="person.height" class="text-danger"></span><br /><br />
+        <label asp-for="person.weight"></label>
+        <input asp-for="person.weight" />
+        <span asp-validation-for="person.weight" class="text-danger"></span><br /><br />
+        <label asp-for="person.gender"></label></br>
+        <input asp-for="person.gender" type="radio" value="Male"/>Male<br />
+        <input asp-for="person.gender" type="radio" value="Female" />Female<br />
+        <input asp-for="person.gender" type="radio" value="Unspecified"/>Unspecified<br /><br />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

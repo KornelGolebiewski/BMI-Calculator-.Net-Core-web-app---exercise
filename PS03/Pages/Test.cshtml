@@ -1,0 +1,36 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using PS03
+@namespace PS03.Pages
+@model PS03.Pages.TestModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BMICalculator</title>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <h1>BMI CALCULATOR</h1>
+
+    <h2>Your data</h2>
+    <label asp-for="person.firstName"></label>: @Model.person.firstName <br />
+    <label asp-for="person.email"></label>: @Model.person.email <br />
+    <label asp-for="person.age"></label>: @Model.person.age<br />
+    <label asp-for="person.unit"></label>: @Model.person.unit<br />
+    <label asp-for="person.height"></label>: @Model.person.height<br />
+    <label asp-for="person.weight"></label>: @Model.person.weight<br />
+    <label asp-for="person.gender"></label>: @Model.person.gender<br />
+
+    <h2>Your BMI</h2>
+    <label asp-for="person.bmi"></label>: @Model.person.bmi<br />
+
+</body>
+</html>
