@@ -1,50 +1,46 @@
 ﻿@page
-@using PS03
-@namespace PS03.Pages
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
-@model IndexModel
+@model PS03.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+
+    ViewData["Title"] = "BMI Calculator Main Page";
+    Layout = "_Layout";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>BMICalculator</title>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <title>BMICalculatorMainPage</title>
+    <style>
+        .submit {
+            background: #98D06A;
+            color: #fff;
+            border: 1px solid #fff;
+            height: 50px;
+            width: 100px;
+            border-radius: 20px;
+        }
+        .submit:hover {
+                background-color: #70B244
+            }
+
+    </style>
+
 
 </head>
 <body>
-    <h1>BMI CALCULATOR</h1>
+    <h1>BMI Calculator</h1>
     <form method="post">
-        <label asp-for="person.firstName"></label>
-        <input asp-for="person.firstName" />
-        <span asp-validation-for="person.firstName" class="text-danger"></span><br /><br />
-        <label asp-for="person.email"></label>
-        <input asp-for="person.email" />
-        <span asp-validation-for="person.email" class="text-danger"></span><br /><br />
-        <label asp-for="person.age"></label>
-        <input asp-for="person.age" />
-        <span asp-validation-for="person.age" class="text-danger"></span><br /><br />
-        <label asp-for="person.unit"></label><br /><br />
-        <select asp-for="person.unit">
-            <option value="">--Please choose an option--</option>
-            <option value="cm">Centimeters</option>
-            <option value="m">Meters</option>
-        </select><br /><br />
-        <label asp-for="person.height"></label>
-        <input asp-for="person.height" />
-        <span asp-validation-for="person.height" class="text-danger"></span><br /><br />
-        <label asp-for="person.weight"></label>
-        <input asp-for="person.weight" />
-        <span asp-validation-for="person.weight" class="text-danger"></span><br /><br />
-        <label asp-for="person.gender"></label></br>
-        <input asp-for="person.gender" type="radio" value="Male"/>Male<br />
-        <input asp-for="person.gender" type="radio" value="Female" />Female<br />
-        <input asp-for="person.gender" type="radio" value="Unspecified"/>Unspecified<br /><br />
-        <button type="submit">Submit</button>
+        <b>
+            Welcome to my BMI Calculator. Try it yourself!
+        </b><br /><br />
+        <p style="font-size: 25px">To check your BMI click Continue</p><br />
+
+        <button class="submit">Continue</button>
+
     </form>
+
+
+
 </body>
 </html>

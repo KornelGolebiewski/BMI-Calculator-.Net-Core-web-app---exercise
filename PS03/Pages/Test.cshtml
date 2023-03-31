@@ -4,6 +4,7 @@
 @namespace PS03.Pages
 @model PS03.Pages.TestModel
 @{
+    Layout = "_Layout";
 }
 <!DOCTYPE html>
 <html>
@@ -21,16 +22,31 @@
     <h1>BMI CALCULATOR</h1>
 
     <h2>Your data</h2>
-    <label asp-for="person.firstName"></label>: @Model.person.firstName <br />
-    <label asp-for="person.email"></label>: @Model.person.email <br />
-    <label asp-for="person.age"></label>: @Model.person.age<br />
-    <label asp-for="person.unit"></label>: @Model.person.unit<br />
-    <label asp-for="person.height"></label>: @Model.person.height<br />
-    <label asp-for="person.weight"></label>: @Model.person.weight<br />
-    <label asp-for="person.gender"></label>: @Model.person.gender<br />
-
+    <b><label asp-for="person.firstName"></label>:</b>  @Model.person.firstName <br />
+    <b><label asp-for="person.email"></label>:</b>  @Model.person.email <br />
+    <b><label asp-for="person.age"></label>:</b>  @Model.person.age<br />
+    <b><label asp-for="person.unit"></label>:</b>  @Model.person.unit<br />
+    <b><label asp-for="person.height"></label>:</b>  @Model.person.height<br />
+    <b><label asp-for="person.weight"></label>:</b>  @Model.person.weight<br />
+    <b><label asp-for="person.gender"></label>:</b>  @Model.person.gender<br />
+    <center>
     <h2>Your BMI</h2>
-    <label asp-for="person.bmi"></label>: @Model.person.bmi<br />
+    <b><label asp-for="person.bmi"></label>:</b> @Model.person.bmi<br />
 
+    @if (@Model.person.bmi >= 25)
+    {
+        <center>
+            <i><span style="color: red"> Your BMI is too high</span></i><br />
+        </center>
+    }
+    else if (@Model.person.bmi < 18.5)
+    {
+        <center>
+            <i><span style="color: red"> Your BMI is too low</span></i><br />
+        </center>
+
+    }
+
+    </center>
 </body>
 </html>
